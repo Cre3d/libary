@@ -22,6 +22,10 @@ void Menu(const Library &lib)
 	cout << "2. Wyswietl szczegilowe informacje o ksiazce" << endl;
 	cout << "3. Dodaj ksiazke" << endl;
 	cout << "4. Usun ksiazke" << endl;
+	cout << "5. Wypozycz ksiazke" << endl;
+	cout << "6. Zwroc ksiazke" << endl;
+	cout << "8. Zapis biblioteki" << endl;
+	cout << "9. Wczytaj biblioteke" << endl;
 	cout << "--------------------------------------------" << endl;
 	cout << "0. Koniec" << endl << endl;
 	cout << "Twoj wybor: ";
@@ -55,30 +59,81 @@ int main()
 
 		switch (ch)
 		{
-		case '1':
+		case '1': // Wyswietl ksiazki
 			lib.Display();
 			system("pause");
 			break;
-		case '2':
+		case '2': // Wyswietl szczeglowe informacje
 			cout << "Ktora ksiazka: ";
 			int book_number;
 			cin >> book_number;
 			lib[book_number - 1].Display();
 			system("pause");
 			break;
-		case '3':
+		case '3': // Dodaj ksiazke
 		{
+			//Author
 			char author[100];
 			cout << "Autor: ";
 			cin.getline(author, 100);
+
+			//Title
 			char title[300];
 			cout << "Tytul: ";
 			cin.getline(title, 300);
+
+			//Year
 			unsigned int year;
 			cout << "Rok: ";
 			cin >> year;
 
+			//Edition
+			unsigned int edition;
+			cout << "Wydanie: ";
+			cin >> edition;
+
+			//Publisher
+			char publisher[100];
+			cout << "Wydawnictwo: ";
+			cin.getline(publisher, 100);
+
+			//Pages
+			unsigned int pages;
+			cout << "Iloœæ stron: ";
+			cin >> pages;
+
+			//Description
+			char description[1000];
+			cout << "Opis: ";
+			cin.getline(description, 1000);
+
+			// lib.AddBook(Book(author,title,year,edition,publisher,pages,description));
 			lib.AddBook(Book(author, title, year, 1, "PWN", 100, "Opis"));
+		}
+		break;
+		case '4': // Usun ksiazke
+		{
+			
+		}
+		break;
+		case '5': // Wypozycz ksiazke
+		{
+
+		}
+		break;
+		case '6': // Zwroc ksiazke
+		{
+
+		}
+		break;
+		case '8': // Zapis bazy
+		{
+
+		}
+		break;
+		case '9': // Wczytanie bazy
+		{
+
 		}
 		break;
 		case '0':
