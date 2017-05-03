@@ -81,34 +81,40 @@ int main()
 			char title[300];
 			cout << "Tytul: ";
 			cin.getline(title, 300);
+		
 
 			//Year
 			unsigned int year;
 			cout << "Rok: ";
 			cin >> year;
+			cin.ignore();
 
 			//Edition
 			unsigned int edition;
 			cout << "Wydanie: ";
 			cin >> edition;
+			cin.ignore();
 
 			//Publisher
 			char publisher[100];
 			cout << "Wydawnictwo: ";
 			cin.getline(publisher, 100);
+			
 
 			//Pages
 			unsigned int pages;
-			cout << "Iloœæ stron: ";
+			cout << "Ilosc stron: ";
 			cin >> pages;
+			cin.ignore();
 
 			//Description
 			char description[1000];
 			cout << "Opis: ";
 			cin.getline(description, 1000);
+			
 
-			// lib.AddBook(Book(author,title,year,edition,publisher,pages,description));
-			lib.AddBook(Book(author, title, year, 1, "PWN", 100, "Opis"));
+			 lib.AddBook(Book(author,title,year,edition,publisher,pages,description));
+			//lib.AddBook(Book(author, title, year, 1, "PWN", 100, "Opis"));
 		}
 		break;
 		case '4': // Usun ksiazke
